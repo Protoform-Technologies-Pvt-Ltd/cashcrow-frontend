@@ -1,6 +1,6 @@
 "use client"
 
-import { Moon, User, Settings, LogOut, Sun, PanelLeft } from "lucide-react"
+import { Moon, User, Settings, LogOut, Sun, PanelLeft, LogIn } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
     DropdownMenu,
@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react";
 import { useSidebar } from "./ui/sidebar"
+import Link from "next/link"
 
 export default function Navbar() {
     const { setTheme, resolvedTheme } = useTheme();
@@ -56,6 +57,7 @@ export default function Navbar() {
                         <DropdownMenuSeparator />
                         <DropdownMenuItem><User className="w-[1.2rem] h-[1.2rem] mr-2" />Profile</DropdownMenuItem>
                         <DropdownMenuItem><Settings className="w-[1.2rem] h-[1.2rem] mr-2" />Settings</DropdownMenuItem>
+                        <DropdownMenuItem asChild><Link href="/login"><LogIn className="w-[1.2rem] h-[1.2rem] mr-2" />Login</Link></DropdownMenuItem>
                         <DropdownMenuItem variant="destructive"><LogOut className="w-[1.2rem] h-[1.2rem] mr-2" />Logout</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
