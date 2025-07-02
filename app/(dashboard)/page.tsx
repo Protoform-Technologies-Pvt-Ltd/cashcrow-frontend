@@ -5,9 +5,10 @@ import BinStatusTable from '@/components/BinStatusTable';
 import SustainabilityRewards from '@/components/SustainabilityRewards';
 import RecentActivity from '@/components/RecentActivity';
 
+
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col px-4 mb-5">
       <div className="@container/main flex flex-1 flex-col gap-2">
 
         <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
@@ -22,13 +23,7 @@ export default function Home() {
             </div>
             <SustainabilityRewards />
             <RecentActivity />
-            <div className="p-5 space-x-5 text-center bg-card">
-              <span className='text-cashcrow-primary'>Hello</span>
-              <span className='text-cashcrow-lightgreen'>Hello</span>
-              <span className='text-cashcrow-secondary'>Hello</span>
-              <span className='text-cashcrow-accent'>Hello</span>
-              <span className='text-cashcrow-textmuted'>Hello</span>
-            </div>
+
           </div>
         </div>
       </div>

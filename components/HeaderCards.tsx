@@ -11,10 +11,6 @@ import {
 import {
     ArrowUp,
     Circle,
-    Leaf,
-    Trash2,
-    TrendingUp,
-    BarChart3,
 } from "lucide-react"
 
 export default function HeaderCards() {

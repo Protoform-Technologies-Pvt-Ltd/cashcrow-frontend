@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <AppSidebar />
             <main className="w-full bg-[#f9fafe] dark:bg-black">
               <Navbar />
-              <div className="px-4">{children}</div>
+              <div>{children}</div>
             </main>
           </SidebarProvider>
         </ThemeProvider>

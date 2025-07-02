@@ -135,3 +135,15 @@
 
 h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
 body, p, li, input { font-family: 'Inter', sans-serif; }
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+}
+
+.group:hover .shake-on-hover {
+  animation: shake 0.5s;
+}

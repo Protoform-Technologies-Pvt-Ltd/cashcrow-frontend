@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react";
 import { useSidebar } from "./ui/sidebar"
 import Link from "next/link"
 
@@ -27,9 +26,9 @@ export default function Navbar() {
     return (
         <nav className="flex items-center justify-between py-4 px-6 bg-white dark:bg-card">
             {/* LEFT */}
-            <div className="flex gap-4">
-                <PanelLeft onClick={toggleSidebar} className="hover:bg-accent cursor-pointer" />
-                <h1 className="font-bold text-sm md:text-lg">Dashboard Overview</h1>
+            <div className="flex gap-4 items-center">
+                <div onClick={toggleSidebar} className="bg-muted/50 p-2 rounded-md cursor-pointer"><PanelLeft /></div>
+                <h1 className="font-bold text-base md:text-lg">Dashboard Overview</h1>
             </div>
             {/* RIGHT */}
             <div className="flex items-center gap-4">
@@ -52,13 +51,31 @@ export default function Navbar() {
                             <AvatarFallback>User Icon</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent sideOffset={10} className="mr-8">
+                    <DropdownMenuContent sideOffset={10} className="mr-5">
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem><User className="w-[1.2rem] h-[1.2rem] mr-2" />Profile</DropdownMenuItem>
-                        <DropdownMenuItem><Settings className="w-[1.2rem] h-[1.2rem] mr-2" />Settings</DropdownMenuItem>
-                        <DropdownMenuItem asChild><Link href="/login"><LogIn className="w-[1.2rem] h-[1.2rem] mr-2" />Login</Link></DropdownMenuItem>
-                        <DropdownMenuItem variant="destructive"><LogOut className="w-[1.2rem] h-[1.2rem] mr-2" />Logout</DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <Link href="/profile">
+                                <User className="w-[1.2rem] h-[1.2rem] mr-2" />
+                                Profile
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <Link href="/">
+                                <Settings className="w-[1.2rem] h-[1.2rem] mr-2" />
+                                Settings
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <Link href="/">
+                                <LogIn className="w-[1.2rem] h-[1.2rem] mr-2" />
+                                Login
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem variant="destructive">
+                            <LogOut className="w-[1.2rem] h-[1.2rem] mr-2" />
+                            Logout
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
 
