@@ -87,7 +87,7 @@ export default function MyBins() {
         setBinData(updated)
     }
 
-    const getStatusBadge = (status: string) => {
+    const getStatusBadge = (status: 'Active' | 'Maintenance' | 'Offline') => {
         const variants = {
             Active: 'bg-cashcrow-bg border-green-500 text-green-700 dark:border-green-400 dark:text-green-300',
             Maintenance: 'bg-yellow-100 border border-yellow-400 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
@@ -222,7 +222,7 @@ export default function MyBins() {
                                                     <MapPin className="h-3 w-3" /><span className="text-sm">{bin.location}</span>
                                                 </div>
                                             </div>
-                                            {getStatusBadge(bin.status)}
+                                            {getStatusBadge(bin.status as 'Active' | 'Maintenance' | 'Offline')}
                                         </div>
                                         <div className="mb-5">
                                             <div className="flex items-center justify-between mb-2 text-sm text-slate-700 dark:text-slate-300">
@@ -314,7 +314,7 @@ export default function MyBins() {
                                             <span>{bin.fillLevel}%</span>
                                         </div>
                                     </TableCell>
-                                    <TableCell >{getStatusBadge(bin.status)}</TableCell>
+                                    <TableCell >{getStatusBadge(bin.status as 'Active' | 'Maintenance' | 'Offline')}</TableCell>
                                     <TableCell className='w-50'>{bin.weight} kg</TableCell>
                                     <TableCell className='w-50'>{bin.battery}%</TableCell>
                                     <TableCell>

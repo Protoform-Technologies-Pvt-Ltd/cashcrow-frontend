@@ -1,19 +1,8 @@
 "use client"
 
-import {
-    Trash2,
-    TriangleAlert,
-    CheckCircle2,
-    PlusCircle,
-    ChevronRight,
-} from "lucide-react"
+import { Trash2, TriangleAlert, CheckCircle2, PlusCircle, ChevronRight, } from "lucide-react"
 import Link from "next/link"
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardTitle, } from "@/components/ui/card"
 
 const activities = [
     {

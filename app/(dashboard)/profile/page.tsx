@@ -1,31 +1,16 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Camera, MapPin, Pencil, Phone, User } from 'lucide-react';
+import { MapPin, Pencil, Phone } from 'lucide-react';
 import SustainabilityRewards from '@/components/SustainabilityRewards';
 import Rewards from '@/components/Rewards';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose, } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export default function Profile() {
   return (
     <div className="space-y-6 px-8 mt-6 mb-18">
-      {/* Heading */}
-      {/* <div>
-        <h1 className="text-2xl font-black text-black dark:text-white">Profile</h1>
-        <p className="text-sm text-muted-foreground">Manage your account and track your sustainability journey</p>
-      </div> */}
-
       <Card className="flex flex-col md:flex-row items-start justify-between p-6 w-full shadow-sm rounded-xl bg-gradient-to-br from-green-50 to-white dark:from-green-950 dark:to-gray-900 border-green-100 dark:border-green-900 transition-all duration-300">
         <div className='flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-6'>
           {/* Left: Avatar */}
@@ -58,7 +43,7 @@ export default function Profile() {
           <Badge className="rounded-full bg-cashcrow-bg border-green-500 text-green-700 dark:border-green-400 dark:text-green-300">
             Gold Member
           </Badge>
-          
+
           {/* Dialog trigger */}
           <Dialog>
             <DialogTrigger asChild>
@@ -67,7 +52,7 @@ export default function Profile() {
                 <span>Edit Profile</span>
               </Button>
             </DialogTrigger>
-            
+
             <DialogContent className="sm:max-w-[425px] bg-gradient-to-br from-white to-white dark:from-green-950 dark:to-gray-900 border-green-100 dark:border-green-900 transition-colors duration-300">
               <DialogHeader>
                 <DialogTitle>Edit profile</DialogTitle>

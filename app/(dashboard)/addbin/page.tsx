@@ -1,10 +1,9 @@
 'use client'
 import { useState, useEffect } from "react"
 import dynamic from "next/dynamic"
-import { Loader, MapPin, QrCode, RefreshCcw, CheckCircle } from "lucide-react"
+import { Loader, MapPin, QrCode, RefreshCcw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 // dynamically import to avoid SSR
 const QRScanner = dynamic(() => import("react-qr-barcode-scanner"), { ssr: false })
@@ -54,10 +53,11 @@ export default function AddBin() {
           <div className="relative w-full h-80 md:h-full aspect-video overflow-hidden rounded-md border border-gray-200 dark:border-zinc-700">
             <QRScanner
               onUpdate={(err, result) => {
-                if (result) setQrData(result.text)
+                if (result) setQrData(result.getText())
               }}
-              constraints={{ facingMode: "environment" }}
-              style={{ width: "100%", height: "100%" }}
+              facingMode="environment"
+              width="100%"
+              height="100%"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-white">
               <QrCode className="h-12 w-12 animate-pulse" />

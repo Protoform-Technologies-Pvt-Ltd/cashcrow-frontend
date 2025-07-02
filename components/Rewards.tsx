@@ -1,45 +1,8 @@
 "use client"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Crown, ChevronRight, Recycle, Building, TreePine, Gift } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Gift } from "lucide-react"
 import Link from "next/link"
-
-const rewards = [
-  {
-    title: "Waste Reduction Master",
-    description: "Reduced waste by 20% in a single month",
-    progress: 100,
-    icon: <Crown className="text-green-600 w-5 h-5" />,
-    achieved: true,
-  },
-  {
-    title: "Recycling Champion",
-    description: "Achieved 75% recycling rate for 3 consecutive months",
-    progress: 85,
-    icon: <Recycle className="text-green-500 w-5 h-5" />,
-    achieved: false,
-  },
-  {
-    title: "Carbon Footprint Reducer",
-    description: "Saved 5000kg of CO₂ emissions through recycling",
-    progress: 42,
-    icon: <TreePine className="text-gray-400 w-5 h-5" />,
-    achieved: false,
-  },
-  {
-    title: "Sustainable Campus",
-    description: "Deploy smart bins across all campus buildings",
-    progress: 65,
-    icon: <Building className="text-green-500 w-5 h-5" />,
-    achieved: false,
-  },
-]
 
 const rewardsOverview = [
   {
@@ -72,7 +35,6 @@ export default function Rewards() {
           <Gift className="w-5 h-5 shake-on-hover" />
           Redeem Rewards
         </Link>
-        
       </div>
 
       {/* Rewards Grid */}
